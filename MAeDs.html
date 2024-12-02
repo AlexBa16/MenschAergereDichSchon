@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mensch ärgere dich schon</title>
+	<link rel="icon" href="MAeDs_icon.png" type="image/png">
+	<link rel="stylesheet" href="./MenschAergereDichSchon_css/MAeDs_style.css">
+	<link rel="stylesheet" href="./MenschAergereDichSchon_css/MAeDs_board.css">
+	<link rel="stylesheet" href="./MenschAergereDichSchon_css/MAeDs_dice.css">
+	<link rel="stylesheet" href="./MenschAergereDichSchon_css/MAeDs_menu.css">
+	<script defer src="./MenschAergereDichSchon_script/MAeDs_variables.js"></script>
+	<script defer src="./MenschAergereDichSchon_script/MAeDs_infoDisplay.js"></script>
+	<script defer src="./MenschAergereDichSchon_script/MAeDs_player.js"></script>
+	<script defer src="./MenschAergereDichSchon_script/MAeDs_menu.js"></script>
+	<script defer src="./MenschAergereDichSchon_script/MAeDs_dice.js"></script>
+</head>
+<body>
+<section class="GameMenu">
+	<div class="numberOfPlayers">
+		<div id="playerAnz_2" onclick="numberOfPlayers(2)">2 Spieler</div>
+		<div id="playerAnz_3" onclick="numberOfPlayers(3)">3 Spieler</div>
+		<div id="playerAnz_4" onclick="numberOfPlayers(4)">4 Spieler</div>
+	</div>
+	<div class="startingPlayer">
+		<p>Wer darf Beginnen?</p>
+		<div class="arrow">
+			<div id="startArrow">&dArr;</div>
+		</div>
+		<div class="startPlayer">
+			<div id="startB" class="startPlayer_div">Blau</div>
+			<div id="startR" class="startPlayer_div">Rot</div>
+			<div id="startY" class="startPlayer_div">Gelb</div>
+			<div id="startG" class="startPlayer_div">Grün</div>
+		</div>
+	</div>
+</section>
+<section class="GameBoard">
+	<div class="board">
+		<!--Info Field-->
+		<div class="game_info">
+			<div class="infoField">
+				<p>
+					<span id="this_player_info"></span>
+					<span id="this_player_info_turn">ist am Zug!</span>
+				</p>
+			</div>
+			<div class="game_info_history">
+				<h1>Spielverlauf:</h1>
+				<ul id="game_infoField">
+					<li>Jeder Spieler erhält 4 Figuren in einer Farbe.</li>
+					<li>Ziel des Spiels ist es, alle 4 Figuren als Erster ins Zielfeld (eigenes Häuschen) zu bringen.</li>
+					<li>Wer eine Sechs hat, darf eine Figur auf das Startfeld stellen.</li>
+					<li>Kommt man mit einer Figur auf ein Feld, auf dem bereits eine Figur steht, wird diese geschlagen.</li>
+					<li>Achtung! Auch eigene Figuren können geschlagen werden</li>
+					<li>Wenn die Möglichkeit besteht, einen Zug zu tätigen, wird diese ergriffen.</li>
+				</ul>
+			</div>
+		</div>
+		<!--Players-->
+
+		<div class="ZIndex player playerB" id="PB_1" onclick="clickOnPlayer(playerBlue, diceB, 1)">1</div>
+		<div class="ZIndex player playerB" id="PB_2" onclick="clickOnPlayer(playerBlue, diceB, 2)">2</div>
+		<div class="ZIndex player playerB" id="PB_3" onclick="clickOnPlayer(playerBlue, diceB, 3)">3</div>
+		<div class="ZIndex player playerB" id="PB_4" onclick="clickOnPlayer(playerBlue, diceB, 4)">4</div>
+
+		<div class="ZIndex player playerR" id="PR_1" onclick="clickOnPlayer(playerRed, diceR, 1)">1</div>
+		<div class="ZIndex player playerR" id="PR_2" onclick="clickOnPlayer(playerRed, diceR, 2)">2</div>
+		<div class="ZIndex player playerR" id="PR_3" onclick="clickOnPlayer(playerRed, diceR, 3)">3</div>
+		<div class="ZIndex player playerR" id="PR_4" onclick="clickOnPlayer(playerRed, diceR, 4)">4</div>
+
+		<div class="ZIndex player playerY" id="PY_1" onclick="clickOnPlayer(playerYellow, diceY, 1)">1</div>
+		<div class="ZIndex player playerY" id="PY_2" onclick="clickOnPlayer(playerYellow, diceY, 2)">2</div>
+		<div class="ZIndex player playerY" id="PY_3" onclick="clickOnPlayer(playerYellow, diceY, 3)">3</div>
+		<div class="ZIndex player playerY" id="PY_4" onclick="clickOnPlayer(playerYellow, diceY, 4)">4</div>
+
+		<div class="ZIndex player playerG" id="PG_1" onclick="clickOnPlayer(playerGreen, diceG, 1)">1</div>
+		<div class="ZIndex player playerG" id="PG_2" onclick="clickOnPlayer(playerGreen, diceG, 2)">2</div>
+		<div class="ZIndex player playerG" id="PG_3" onclick="clickOnPlayer(playerGreen, diceG, 3)">3</div>
+		<div class="ZIndex player playerG" id="PG_4" onclick="clickOnPlayer(playerGreen, diceG, 4)">4</div>
+
+		<div class="player ShPlayer ShPlayerB" id="SPB_1">1</div>
+		<div class="player ShPlayer ShPlayerB" id="SPB_2">2</div>
+		<div class="player ShPlayer ShPlayerB" id="SPB_3">3</div>
+		<div class="player ShPlayer ShPlayerB" id="SPB_4">4</div>
+
+		<div class="player ShPlayer ShPlayerR" id="SPR_1">1</div>
+		<div class="player ShPlayer ShPlayerR" id="SPR_2">2</div>
+		<div class="player ShPlayer ShPlayerR" id="SPR_3">3</div>
+		<div class="player ShPlayer ShPlayerR" id="SPR_4">4</div>
+
+		<div class="player ShPlayer ShPlayerY" id="SPY_1">1</div>
+		<div class="player ShPlayer ShPlayerY" id="SPY_2">2</div>
+		<div class="player ShPlayer ShPlayerY" id="SPY_3">3</div>
+		<div class="player ShPlayer ShPlayerY" id="SPY_4">4</div>
+
+		<div class="player ShPlayer ShPlayerG" id="SPG_1">1</div>
+		<div class="player ShPlayer ShPlayerG" id="SPG_2">2</div>
+		<div class="player ShPlayer ShPlayerG" id="SPG_3">3</div>
+		<div class="player ShPlayer ShPlayerG" id="SPG_4">4</div>
+
+		<!--Main Fields-->
+
+		<div class="field field_down blueStart" id="F0"></div> <!--Starting field Blue-->
+		<div class="field field_down" id="F1"></div>
+		<div class="field field_down" id="F2"></div>
+		<div class="field field_down" id="F3"></div>
+		<div class="field field_right" id="F4"></div>
+		<div class="field field_right" id="F5"></div>
+		<div class="field field_right" id="F6"></div>
+		<div class="field field_right" id="F7"></div>
+		<div class="field field_down" id="F8"></div>
+		<div class="field field_down" id="F9"></div>
+		<div class="field field_left redStart" id="F10"></div> <!--Starting field Red-->
+		<div class="field field_left" id="F11"></div>
+		<div class="field field_left" id="F12"></div>
+		<div class="field field_left" id="F13"></div>
+		<div class="field field_down" id="F14"></div>
+		<div class="field field_down" id="F15"></div>
+		<div class="field field_down" id="F16"></div>
+		<div class="field field_down" id="F17"></div>
+		<div class="field field_left" id="F18"></div>
+		<div class="field field_left" id="F19"></div>
+		<div class="field field_up yellowStart" id="F20"></div> <!--Starting field Yellow-->
+		<div class="field field_up" id="F21"></div>
+		<div class="field field_up" id="F22"></div>
+		<div class="field field_up" id="F23"></div>
+		<div class="field field_left" id="F24"></div>
+		<div class="field field_left" id="F25"></div>
+		<div class="field field_left" id="F26"></div>
+		<div class="field field_left" id="F27"></div>
+		<div class="field field_up" id="F28"></div>
+		<div class="field field_up" id="F29"></div>
+		<div class="field field_right greenStart" id="F30"></div> <!--Starting field Green-->
+		<div class="field field_right" id="F31"></div>
+		<div class="field field_right" id="F32"></div>
+		<div class="field field_right" id="F33"></div>
+		<div class="field field_up" id="F34"></div>
+		<div class="field field_up" id="F35"></div>
+		<div class="field field_up" id="F36"></div>
+		<div class="field field_up" id="F37"></div>
+		<div class="field field_right" id="F38"></div>
+		<div class="field" id="F39"></div>
+
+		<!--Start Fields-->
+
+		<!--Blue-->
+		<div class="startField sfBlue" id="B1"></div>
+		<div class="startField sfBlue" id="B2"></div>
+		<div class="startField sfBlue" id="B3"></div>
+		<div class="startField sfBlue" id="B4"></div>
+
+		<!--Red-->
+		<div class="startField sfRed" id="R1"></div>
+		<div class="startField sfRed" id="R2"></div>
+		<div class="startField sfRed" id="R3"></div>
+		<div class="startField sfRed" id="R4"></div>
+
+		<!--Yellow-->
+		<div class="startField sfYellow" id="Y1"></div>
+		<div class="startField sfYellow" id="Y2"></div>
+		<div class="startField sfYellow" id="Y3"></div>
+		<div class="startField sfYellow" id="Y4"></div>
+
+		<!--Green-->
+		<div class="startField sfGreen" id="G1"></div>
+		<div class="startField sfGreen" id="G2"></div>
+		<div class="startField sfGreen" id="G3"></div>
+		<div class="startField sfGreen" id="G4"></div>
+
+		<!--Finish Fields-->
+
+		<!--Blue-->
+		<div class="finishField ffBlue firstFFBlue" id="B5"></div>
+		<div class="finishField ffBlue" id="B6"></div>
+		<div class="finishField ffBlue" id="B7"></div>
+		<div class="finishField ffBlue" id="B8"></div>
+
+		<!--Red-->
+		<div class="finishField ffRed firstFFRed" id="R5"></div>
+		<div class="finishField ffRed" id="R6"></div>
+		<div class="finishField ffRed" id="R7"></div>
+		<div class="finishField ffRed" id="R8"></div>
+
+		<!--Yellow-->
+		<div class="finishField ffYellow firstFFYellow" id="Y5"></div>
+		<div class="finishField ffYellow" id="Y6"></div>
+		<div class="finishField ffYellow" id="Y7"></div>
+		<div class="finishField ffYellow" id="Y8"></div>
+
+		<!--Green-->
+		<div class="finishField ffGreen firstFFGreen" id="G5"></div>
+		<div class="finishField ffGreen" id="G6"></div>
+		<div class="finishField ffGreen" id="G7"></div>
+		<div class="finishField ffGreen" id="G8"></div>
+
+		<!--Dices-->
+
+		<div class="dice" id="diceB" onclick="RollDice('B', diceB, playerBlue)">
+			<div class="dice-side">
+				<div class="diceB_1 dice1">
+					<div class="dot"></div>
+				</div>
+				<div class="diceB_2 dice2">
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+				<div class="diceB_3 dice3">
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+				<div class="diceB_4 dice4">
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+				<div class="diceB_5 dice5">
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+				<div class="diceB_6 dice6">
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+			</div>
+		</div>
+		<div class="dice" id="diceR" onclick="RollDice('R', diceR, playerRed)">
+			<div class="dice-side">
+				<div class="diceR_1 dice1">
+					<div class="dot"></div>
+				</div>
+				<div class="diceR_2 dice2">
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+				<div class="diceR_3 dice3">
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+				<div class="diceR_4 dice4">
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+				<div class="diceR_5 dice5">
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+				<div class="diceR_6 dice6">
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+			</div>
+		</div>
+		<div class="dice" id="diceY" onclick="RollDice('Y', diceY, playerYellow)">
+			<div class="dice-side">
+				<div class="diceY_1 dice1">
+					<div class="dot"></div>
+				</div>
+				<div class="diceY_2 dice2">
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+				<div class="diceY_3 dice3">
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+				<div class="diceY_4 dice4">
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+				<div class="diceY_5 dice5">
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+				<div class="diceY_6 dice6">
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+			</div>
+		</div>
+		<div class="dice" id="diceG" onclick="RollDice('G', diceG, playerGreen)">
+			<div class="dice-side">
+				<div class="diceG_1 dice1">
+					<div class="dot"></div>
+				</div>
+				<div class="diceG_2 dice2">
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+				<div class="diceG_3 dice3">
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+				<div class="diceG_4 dice4">
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+				<div class="diceG_5 dice5">
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+				<div class="diceG_6 dice6">
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+			</div>
+		</div>
+
+
+		<!--Arrows-->
+		<svg id="ArrowB" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+			<polygon points="10,25 40,40 35,25 40,10" fill="var(--MAeDs_blue)" transform="rotate(-90 25 25)"/>
+		</svg>
+		<svg id="ArrowR" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+			<polygon points="10,25 40,40 35,25 40,10" fill="var(--MAeDs_red)"/>
+		</svg>
+		<svg id="ArrowY" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+			<polygon points="10,25 40,40 35,25 40,10" fill="var(--MAeDs_yellow)" transform="rotate(90 25 25)"/>
+		</svg>
+		<svg id="ArrowG" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+			<polygon points="10,25 40,40 35,25 40,10" fill="var(--MAeDs_green)" transform="rotate(180 25 25)"/>
+		</svg>
+	</div>
+</section>
+<section class="win">
+	<div><p>
+		<span>Herzlichen Glückwunsch </span>
+		<span id="win_player">Blau</span>
+	</p></div>
+</section>
+</body>
+</html>

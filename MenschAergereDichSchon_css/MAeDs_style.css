@@ -1,0 +1,179 @@
+:root {
+    /*Colors*/
+    --MAeDs_background-color: #3b3b3b;
+    --MAeDs_background-color-infoField: black;
+    --MAeDs_circle-border: white;
+    --MAeDs_player-border: black;
+    --MAeDs_blue: #3d71ff;
+    --MAeDs_red: red;
+    --MAeDs_yellow: #c4c41d;
+    --MAeDs_green: green;
+    --MAeDs_font-color_white: white;
+    --MAeDs_font-color_black: black;
+    --MAeDs_dice_glow: #e5ed9e;
+    --MAeDs_player_glow: #ee55eedd;
+    --MAeDs_ShPlayer_glow: rgb(85, 236, 255);
+    --MAeDs_menu_color_blue: blue;
+    --MAeDs_menu_color_red: red;
+    --MAeDs_menu_color_yellow: yellow;
+    --MAeDs_menu_color_green: green;
+    /*Variables*/
+    --MAeDs_menu_left_0: 0;
+    --MAeDs_menu_left_1: 200px;
+    --MAeDs_menu_left_2: 400px;
+    --MAeDs_menu_left_3: 600px;
+}
+body{
+    margin: 0 auto;
+    background-color: var(--MAeDs_background-color);
+    user-select: none;
+    color: var(--MAeDs_font-color_white);
+}
+.field{background-color: var(--MAeDs_background-color);}
+.GameBoard{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.board div{box-sizing: border-box;}
+.board{
+    height: 600px;
+    width: 600px;
+    padding: 25px;
+    position: relative;
+}
+.field, .finishField, .startField, .player{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: var(--MAeDs_circle-border) solid 2px;
+}
+.sfBlue, .ffBlue, .blueStart, .playerB, .ShPlayerB{background-color: var(--MAeDs_blue);}
+.sfRed, .ffRed, .redStart, .playerR, .ShPlayerR{background-color: var(--MAeDs_red);}
+.sfYellow, .ffYellow, .yellowStart, .playerY, .ShPlayerY{background-color: var(--MAeDs_yellow);}
+.sfGreen, .ffGreen, .greenStart, .playerG, .ShPlayerG{background-color: var(--MAeDs_green);}
+.finishField{transform: scale(0.8);}
+.player{
+    box-sizing: border-box;
+    transform: scale(0.6);
+    border: var(--MAeDs_player-border) solid 5px;
+    font-size: 25px;
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+    color: var(--MAeDs_font-color_white);
+}
+.playerY, .ShPlayerY{color: var(--MAeDs_font-color_black);}
+/*Highlight Movable Players*/
+.player.movable{
+    outline: none;
+    box-shadow: 0 0 10px 20px var(--MAeDs_player_glow);
+}
+/*GAME_INFO*/
+@keyframes slide-in {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.game_info *{
+    scroll-behavior: smooth;
+}
+.game_info{
+    position: absolute;
+    right: -350px;
+    height: auto;
+    top: 50%;
+    width: 350px;
+    transform: translate(0, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#game_infoField{
+    height: 300px;
+}
+.game_info ul{
+    font-family: Consolas, serif;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.game_info h1{
+    text-align: center;
+}
+.game_info ul::-webkit-scrollbar {
+    display: none;
+}
+
+/*Info Field*/
+.infoField{
+    font-size: 30px;
+    background-color: var(--MAeDs_background-color-infoField);
+    border-radius: 20px;
+    padding: 20px;
+}
+.infoField > p{
+    margin: 0;
+}
+#this_player_info{
+    text-decoration: underline;
+    color: var(--MAeDs_blue);
+}
+.game_info hr{
+    position: relative;
+    left: -16px;
+    width: 100%;
+}
+.ShPlayer {
+    z-index: 200;
+    opacity: 0.5;
+    display: none;
+}
+.ZIndex{
+    z-index: 100;
+}
+.ShPlayer.shadow{
+    display: block;
+    animation: pulse 800ms infinite;
+}
+@keyframes pulse {
+    0% {box-shadow: 0 0 10px 20px var(--MAeDs_ShPlayer_glow);}
+    50% {box-shadow: 0 0 20px 30px var(--MAeDs_ShPlayer_glow);}
+    100% {box-shadow: 0 0 10px 20px var(--MAeDs_ShPlayer_glow);}
+}
+.win{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    outline: none;
+}
+.win div{
+    animation: pulse 4s infinite;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 30px;
+    /*padding: 20px;*/
+}
+.win p{
+    font-family: Alef, sans-serif;
+    margin: 0;
+    color: black;
+    font-size: 40px;
+    background-color: var(--MAeDs_ShPlayer_glow);
+}
+#win_player{color: var(--MAeDs_menu_color_blue);}

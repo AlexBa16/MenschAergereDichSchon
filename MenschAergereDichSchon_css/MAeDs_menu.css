@@ -1,0 +1,126 @@
+/*Starting Menu*/
+.GameMenu{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.GameMenu div{
+    box-sizing: border-box;
+}
+/*Number of Players*/
+.numberOfPlayers{
+    display: flex;
+    flex-direction: column;
+}
+.numberOfPlayers div{
+    margin: 5% 0 5% 0;
+    padding: 20px;
+    font-size: 50px;
+    font-family: Consolas, serif;
+    background-color: var(--MAeDs_font-color_white);
+    color: var(--MAeDs_font-color_black);
+    border-radius: 20px;
+    transition: 200ms ease-in-out;
+}
+.numberOfPlayers div:hover{
+    transform: scale(1.2);
+    color: var(--MAeDs_font-color_white);
+    cursor: grab;
+}
+#playerAnz_2:hover{
+    background: repeating-linear-gradient(
+            to bottom right,
+            var(--MAeDs_blue), var(--MAeDs_blue) 50%,
+            var(--MAeDs_yellow), var(--MAeDs_yellow) 100%
+    );
+}
+#playerAnz_3:hover{
+    background: repeating-linear-gradient(
+            to bottom right,
+            var(--MAeDs_blue), var(--MAeDs_blue) 33%,
+            var(--MAeDs_red), var(--MAeDs_red) 66%,
+            var(--MAeDs_yellow), var(--MAeDs_yellow) 100%
+    );
+}
+#playerAnz_4:hover{
+    background: repeating-linear-gradient(
+            to bottom right,
+            var(--MAeDs_blue), var(--MAeDs_blue) 25%,
+            var(--MAeDs_red), var(--MAeDs_red) 50%,
+            var(--MAeDs_yellow), var(--MAeDs_yellow) 75%,
+            var(--MAeDs_green), var(--MAeDs_green) 100%
+    );
+}
+/*Animation for who beginns*/
+.startingPlayer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+.startPlayer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-between;
+    gap: 100px;
+    width: 700px;
+}
+.arrow{
+    width: 650px;
+}
+.startingPlayer p{margin-bottom: 50px;}
+.startingPlayer > div > div{
+    width: 100px;
+    text-align: center;
+    position: relative;
+}
+#startArrow {
+    color: var(--MAeDs_font-color_white);
+    position: relative;
+    width: 50px;
+    height: 50px;
+    left: var(--MAeDs_menu_left_0);
+    animation: swing 3s infinite;
+}
+@keyframes swing {
+    0%, 100% {
+        left: var(--MAeDs_menu_left_0);
+        color: var(--MAeDs_menu_color_blue);
+    }
+    16.5%, 83% {
+        left: var(--MAeDs_menu_left_1);
+        color: var(--MAeDs_menu_color_red);
+    }
+    33%, 66.5% {
+        left: var(--MAeDs_menu_left_2);
+        color: var(--MAeDs_menu_color_yellow);
+    }
+    50% {
+        left: var(--MAeDs_menu_left_3);
+        color: var(--MAeDs_menu_color_green);
+    }
+}
+@keyframes swing_3Player {
+    0%, 100% {
+        left: var(--MAeDs_menu_left_0);
+        color: var(--MAeDs_menu_color_blue);
+    }
+    25%, 75% {
+        left: var(--MAeDs_menu_left_1);
+        color: var(--MAeDs_menu_color_red);
+    }
+    26%{}
+    50% {
+        left: var(--MAeDs_menu_left_3);
+        color: var(--MAeDs_menu_color_yellow);
+    }
+}
+.disabled{display: none;}
+.startingPlayer{display: none;}
+.GameBoard{display: none;}
+.win{display: none;}
