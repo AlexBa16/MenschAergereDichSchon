@@ -1,7 +1,7 @@
-.board{
+.board {
     display: grid;
-    grid-template-rows: repeat(11,50px);
-    grid-template-columns: repeat(11,50px);
+    grid-template-rows: repeat(11, 50px);
+    grid-template-columns: repeat(11, 50px);
     gap: 5px;
     grid-template-areas:
     "G1  G2  .   .   F38 F39 F0  AB  .   B1  B2 "
@@ -18,151 +18,469 @@
 }
 
 /*Players*/
-#PB_1{grid-area: B1;}
-#PB_2{grid-area: B2;}
-#PB_3{grid-area: B3;}
-#PB_4{grid-area: B4;}
+#PB_1 {
+    grid-area: B1;
+}
 
-#PR_1{grid-area: R1;}
-#PR_2{grid-area: R2;}
-#PR_3{grid-area: R3;}
-#PR_4{grid-area: R4;}
+#PB_2 {
+    grid-area: B2;
+}
 
-#PY_1{grid-area: Y1;}
-#PY_2{grid-area: Y2;}
-#PY_3{grid-area: Y3;}
-#PY_4{grid-area: Y4;}
+#PB_3 {
+    grid-area: B3;
+}
 
-#PG_1{grid-area: G1;}
-#PG_2{grid-area: G2;}
-#PG_3{grid-area: G3;}
-#PG_4{grid-area: G4;}
+#PB_4 {
+    grid-area: B4;
+}
+
+#PR_1 {
+    grid-area: R1;
+}
+
+#PR_2 {
+    grid-area: R2;
+}
+
+#PR_3 {
+    grid-area: R3;
+}
+
+#PR_4 {
+    grid-area: R4;
+}
+
+#PY_1 {
+    grid-area: Y1;
+}
+
+#PY_2 {
+    grid-area: Y2;
+}
+
+#PY_3 {
+    grid-area: Y3;
+}
+
+#PY_4 {
+    grid-area: Y4;
+}
+
+#PG_1 {
+    grid-area: G1;
+}
+
+#PG_2 {
+    grid-area: G2;
+}
+
+#PG_3 {
+    grid-area: G3;
+}
+
+#PG_4 {
+    grid-area: G4;
+}
 
 /*Shadow Players*/
-#SPB_1{grid-area: B1;}
-#SPB_2{grid-area: B2;}
-#SPB_3{grid-area: B3;}
-#SPB_4{grid-area: B4;}
+#SPB_1 {
+    grid-area: B1;
+}
 
-#SPR_1{grid-area: R1;}
-#SPR_2{grid-area: R2;}
-#SPR_3{grid-area: R3;}
-#SPR_4{grid-area: R4;}
+#SPB_2 {
+    grid-area: B2;
+}
 
-#SPY_1{grid-area: Y1;}
-#SPY_2{grid-area: Y2;}
-#SPY_3{grid-area: Y3;}
-#SPY_4{grid-area: Y4;}
+#SPB_3 {
+    grid-area: B3;
+}
 
-#SPG_1{grid-area: G1;}
-#SPG_2{grid-area: G2;}
-#SPG_3{grid-area: G3;}
-#SPG_4{grid-area: G4;}
+#SPB_4 {
+    grid-area: B4;
+}
+
+#SPR_1 {
+    grid-area: R1;
+}
+
+#SPR_2 {
+    grid-area: R2;
+}
+
+#SPR_3 {
+    grid-area: R3;
+}
+
+#SPR_4 {
+    grid-area: R4;
+}
+
+#SPY_1 {
+    grid-area: Y1;
+}
+
+#SPY_2 {
+    grid-area: Y2;
+}
+
+#SPY_3 {
+    grid-area: Y3;
+}
+
+#SPY_4 {
+    grid-area: Y4;
+}
+
+#SPG_1 {
+    grid-area: G1;
+}
+
+#SPG_2 {
+    grid-area: G2;
+}
+
+#SPG_3 {
+    grid-area: G3;
+}
+
+#SPG_4 {
+    grid-area: G4;
+}
 
 /*Main Field*/
-#F0{grid-area: F0;}
-#F1{grid-area: F1;}
-#F2{grid-area: F2;}
-#F3{grid-area: F3;}
-#F4{grid-area: F4;}
-#F5{grid-area: F5;}
-#F6{grid-area: F6;}
-#F7{grid-area: F7;}
-#F8{grid-area: F8;}
-#F9{grid-area: F9;}
-#F10{grid-area: F10;}
-#F11{grid-area: F11;}
-#F12{grid-area: F12;}
-#F13{grid-area: F13;}
-#F14{grid-area: F14;}
-#F15{grid-area: F15;}
-#F16{grid-area: F16;}
-#F17{grid-area: F17;}
-#F18{grid-area: F18;}
-#F19{grid-area: F19;}
-#F20{grid-area: F20;}
-#F21{grid-area: F21;}
-#F22{grid-area: F22;}
-#F23{grid-area: F23;}
-#F24{grid-area: F24;}
-#F25{grid-area: F25;}
-#F26{grid-area: F26;}
-#F27{grid-area: F27;}
-#F28{grid-area: F28;}
-#F29{grid-area: F29;}
-#F30{grid-area: F30;}
-#F31{grid-area: F31;}
-#F32{grid-area: F32;}
-#F33{grid-area: F33;}
-#F34{grid-area: F34;}
-#F35{grid-area: F35;}
-#F36{grid-area: F36;}
-#F37{grid-area: F37;}
-#F38{grid-area: F38;}
-#F39{grid-area: F39;}
+#F0 {
+    grid-area: F0;
+}
+
+#F1 {
+    grid-area: F1;
+}
+
+#F2 {
+    grid-area: F2;
+}
+
+#F3 {
+    grid-area: F3;
+}
+
+#F4 {
+    grid-area: F4;
+}
+
+#F5 {
+    grid-area: F5;
+}
+
+#F6 {
+    grid-area: F6;
+}
+
+#F7 {
+    grid-area: F7;
+}
+
+#F8 {
+    grid-area: F8;
+}
+
+#F9 {
+    grid-area: F9;
+}
+
+#F10 {
+    grid-area: F10;
+}
+
+#F11 {
+    grid-area: F11;
+}
+
+#F12 {
+    grid-area: F12;
+}
+
+#F13 {
+    grid-area: F13;
+}
+
+#F14 {
+    grid-area: F14;
+}
+
+#F15 {
+    grid-area: F15;
+}
+
+#F16 {
+    grid-area: F16;
+}
+
+#F17 {
+    grid-area: F17;
+}
+
+#F18 {
+    grid-area: F18;
+}
+
+#F19 {
+    grid-area: F19;
+}
+
+#F20 {
+    grid-area: F20;
+}
+
+#F21 {
+    grid-area: F21;
+}
+
+#F22 {
+    grid-area: F22;
+}
+
+#F23 {
+    grid-area: F23;
+}
+
+#F24 {
+    grid-area: F24;
+}
+
+#F25 {
+    grid-area: F25;
+}
+
+#F26 {
+    grid-area: F26;
+}
+
+#F27 {
+    grid-area: F27;
+}
+
+#F28 {
+    grid-area: F28;
+}
+
+#F29 {
+    grid-area: F29;
+}
+
+#F30 {
+    grid-area: F30;
+}
+
+#F31 {
+    grid-area: F31;
+}
+
+#F32 {
+    grid-area: F32;
+}
+
+#F33 {
+    grid-area: F33;
+}
+
+#F34 {
+    grid-area: F34;
+}
+
+#F35 {
+    grid-area: F35;
+}
+
+#F36 {
+    grid-area: F36;
+}
+
+#F37 {
+    grid-area: F37;
+}
+
+#F38 {
+    grid-area: F38;
+}
+
+#F39 {
+    grid-area: F39;
+}
 
 /*Start Field*/
-#B1{grid-area: B1;}
-#B2{grid-area: B2;}
-#B3{grid-area: B3;}
-#B4{grid-area: B4;}
+#B1 {
+    grid-area: B1;
+}
 
-#R1{grid-area: R1;}
-#R2{grid-area: R2;}
-#R3{grid-area: R3;}
-#R4{grid-area: R4;}
+#B2 {
+    grid-area: B2;
+}
 
-#Y1{grid-area: Y1;}
-#Y2{grid-area: Y2;}
-#Y3{grid-area: Y3;}
-#Y4{grid-area: Y4;}
+#B3 {
+    grid-area: B3;
+}
 
-#G1{grid-area: G1;}
-#G2{grid-area: G2;}
-#G3{grid-area: G3;}
-#G4{grid-area: G4;}
+#B4 {
+    grid-area: B4;
+}
+
+#R1 {
+    grid-area: R1;
+}
+
+#R2 {
+    grid-area: R2;
+}
+
+#R3 {
+    grid-area: R3;
+}
+
+#R4 {
+    grid-area: R4;
+}
+
+#Y1 {
+    grid-area: Y1;
+}
+
+#Y2 {
+    grid-area: Y2;
+}
+
+#Y3 {
+    grid-area: Y3;
+}
+
+#Y4 {
+    grid-area: Y4;
+}
+
+#G1 {
+    grid-area: G1;
+}
+
+#G2 {
+    grid-area: G2;
+}
+
+#G3 {
+    grid-area: G3;
+}
+
+#G4 {
+    grid-area: G4;
+}
 
 /*Finish Field*/
 
-#B5{grid-area: B5;}
-#B6{grid-area: B6;}
-#B7{grid-area: B7;}
-#B8{grid-area: B8;}
+#B5 {
+    grid-area: B5;
+}
 
-#R5{grid-area: R5;}
-#R6{grid-area: R6;}
-#R7{grid-area: R7;}
-#R8{grid-area: R8;}
+#B6 {
+    grid-area: B6;
+}
 
-#Y5{grid-area: Y5;}
-#Y6{grid-area: Y6;}
-#Y7{grid-area: Y7;}
-#Y8{grid-area: Y8;}
+#B7 {
+    grid-area: B7;
+}
 
-#G5{grid-area: G5;}
-#G6{grid-area: G6;}
-#G7{grid-area: G7;}
-#G8{grid-area: G8;}
+#B8 {
+    grid-area: B8;
+}
+
+#R5 {
+    grid-area: R5;
+}
+
+#R6 {
+    grid-area: R6;
+}
+
+#R7 {
+    grid-area: R7;
+}
+
+#R8 {
+    grid-area: R8;
+}
+
+#Y5 {
+    grid-area: Y5;
+}
+
+#Y6 {
+    grid-area: Y6;
+}
+
+#Y7 {
+    grid-area: Y7;
+}
+
+#Y8 {
+    grid-area: Y8;
+}
+
+#G5 {
+    grid-area: G5;
+}
+
+#G6 {
+    grid-area: G6;
+}
+
+#G7 {
+    grid-area: G7;
+}
+
+#G8 {
+    grid-area: G8;
+}
 
 /*Arrows*/
 
-#ArrowB{grid-area: AB;}
-#ArrowR{grid-area: AR;}
-#ArrowY{grid-area: AY;}
-#ArrowG{grid-area: AG;}
+#ArrowB {
+    grid-area: AB;
+}
+
+#ArrowR {
+    grid-area: AR;
+}
+
+#ArrowY {
+    grid-area: AY;
+}
+
+#ArrowG {
+    grid-area: AG;
+}
 
 /*Dice*/
 
-#diceB{grid-area: DCB;}
-#diceR{grid-area: DCR;}
-#diceY{grid-area: DCY;}
-#diceG{grid-area: DCG;}
+#diceB {
+    grid-area: DCB;
+}
+
+#diceR {
+    grid-area: DCR;
+}
+
+#diceY {
+    grid-area: DCY;
+}
+
+#diceG {
+    grid-area: DCG;
+}
 
 /*Design of the line between the fields*/
-.field, .finishField{
+.field, .finishField {
     position: absolute;
 }
-.field_down::before{
+
+.field_down::before {
     content: "";
     position: absolute;
     top: 100%;
@@ -172,7 +490,8 @@
     background-color: var(--MAeDs_circle-border);
     transform: translateX(-50%);
 }
-.field_up::before{
+
+.field_up::before {
     content: "";
     position: absolute;
     top: -10px;
@@ -182,7 +501,8 @@
     background-color: var(--MAeDs_circle-border);
     transform: translateX(-50%);
 }
-.field_left::before{
+
+.field_left::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -192,7 +512,8 @@
     background-color: var(--MAeDs_circle-border);
     transform: translateY(-50%);
 }
-.field_right::before{
+
+.field_right::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -202,7 +523,8 @@
     background-color: var(--MAeDs_circle-border);
     transform: translateY(-50%);
 }
-.blueStart::after{
+
+.blueStart::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -212,8 +534,9 @@
     background-color: var(--MAeDs_circle-border);
     transform: translateY(-50%);
 }
+
 /*Finish Fields*/
-.ffBlue::before{
+.ffBlue::before {
     content: "";
     position: absolute;
     top: -21px;
@@ -223,11 +546,13 @@
     background-color: var(--MAeDs_circle-border);
     transform: translateX(-50%);
 }
-.firstFFBlue::before{
+
+.firstFFBlue::before {
     top: -15px;
     height: 15px;
 }
-.ffRed::before{
+
+.ffRed::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -237,10 +562,12 @@
     background-color: var(--MAeDs_circle-border);
     transform: translateY(-50%);
 }
-.firstFFRed::before{
+
+.firstFFRed::before {
     width: 15px;
 }
-.ffYellow::before{
+
+.ffYellow::before {
     content: "";
     position: absolute;
     top: 100%;
@@ -250,10 +577,12 @@
     background-color: var(--MAeDs_circle-border);
     transform: translateX(-50%);
 }
-.firstFFYellow::before{
+
+.firstFFYellow::before {
     height: 15px;
 }
-.ffGreen::before{
+
+.ffGreen::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -263,7 +592,8 @@
     background-color: var(--MAeDs_circle-border);
     transform: translateY(-50%);
 }
-.firstFFGreen::before{
+
+.firstFFGreen::before {
     left: -15px;
     width: 15px;
 }

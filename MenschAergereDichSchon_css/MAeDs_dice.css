@@ -1,6 +1,7 @@
 .dice {
     padding: 20px;
 }
+
 .dice-side {
     width: 100%;
     height: 100%;
@@ -8,133 +9,166 @@
     background-color: white;
     padding: 15%;
 }
-.dot{
+
+.dot {
     position: absolute;
     width: 15px;
     height: 15px;
     background-color: black;
     border-radius: 50%;
 }
-.dice-side > div{
+
+.dice-side > div {
     height: 100%;
     width: 100%;
 }
+
 .diceB_1, .diceB_2, .diceB_3, .diceB_4, .diceB_5,
 .diceR_1, .diceR_2, .diceR_3, .diceR_4, .diceR_5,
 .diceY_1, .diceY_2, .diceY_3, .diceY_4, .diceY_5,
-.diceG_1, .diceG_2, .diceG_3, .diceG_4, .diceG_5{
+.diceG_1, .diceG_2, .diceG_3, .diceG_4, .diceG_5 {
     display: none;
 }
-.dice1, .dice2, .dice3, .dice4, .dice5, .dice6{
+
+.dice1, .dice2, .dice3, .dice4, .dice5, .dice6 {
     position: relative;
 }
+
 /*Dice side 1*/
-.dice1 .dot{
+.dice1 .dot {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 /*Dice side 2*/
 .dice2 .dot:nth-child(1) {
     top: 0;
     right: 0;
 }
-.dice2 .dot:nth-child(2){
+
+.dice2 .dot:nth-child(2) {
     bottom: 0;
     left: 0;
 }
+
 /*Dice side 3*/
 .dice3 .dot:nth-child(1) {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .dice3 .dot:nth-child(2) {
     top: 0;
     right: 0;
 }
-.dice3 .dot:nth-child(3){
+
+.dice3 .dot:nth-child(3) {
     bottom: 0;
     left: 0;
 }
+
 /*Dice side 4*/
 .dice4 .dot:nth-child(1) {
     top: 0;
     left: 0;
 }
+
 .dice4 .dot:nth-child(2) {
     top: 0;
     right: 0;
 }
-.dice4 .dot:nth-child(3){
+
+.dice4 .dot:nth-child(3) {
     bottom: 0;
     left: 0;
 }
-.dice4 .dot:nth-child(4){
+
+.dice4 .dot:nth-child(4) {
     bottom: 0;
     right: 0;
 }
+
 /*Dice side 5*/
 .dice5 .dot:nth-child(1) {
     top: 0;
     left: 0;
 }
+
 .dice5 .dot:nth-child(2) {
     top: 0;
     right: 0;
 }
-.dice5 .dot:nth-child(3){
+
+.dice5 .dot:nth-child(3) {
     bottom: 0;
     left: 0;
 }
-.dice5 .dot:nth-child(4){
+
+.dice5 .dot:nth-child(4) {
     bottom: 0;
     right: 0;
 }
-.dice5 .dot:nth-child(5){
+
+.dice5 .dot:nth-child(5) {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 /*Dice side 6*/
 .dice6 .dot:nth-child(1) {
     top: -3px;
     left: 0;
 }
+
 .dice6 .dot:nth-child(2) {
     top: -3px;
     right: 0;
 }
-.dice6 .dot:nth-child(3){
+
+.dice6 .dot:nth-child(3) {
     bottom: -3px;
     left: 0;
 }
-.dice6 .dot:nth-child(4){
+
+.dice6 .dot:nth-child(4) {
     bottom: -3px;
     right: 0;
 }
-.dice6 .dot:nth-child(5){
+
+.dice6 .dot:nth-child(5) {
     top: 50%;
     left: 0;
     transform: translate(0, -50%);
 }
-.dice6 .dot:nth-child(6){
+
+.dice6 .dot:nth-child(6) {
     top: 50%;
     right: 0;
     transform: translate(0, -50%);
 }
+
 /*Dice Animation*/
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(3600deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(3600deg);
+    }
 }
+
 .dice {
     animation: spin 500ms infinite;
     animation-play-state: paused;
 }
+
 .dice.spin {
     animation-play-state: running;
 }
-.dice.throwable .dice-side{
+
+.dice.throwable .dice-side {
     box-shadow: 0 0 50px 20px var(--MAeDs_dice_glow);
 }

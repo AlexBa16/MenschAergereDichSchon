@@ -3,11 +3,13 @@ let diceB = [document.getElementById('diceB'), 6];
 let diceR = [document.getElementById('diceR'), 6];
 let diceY = [document.getElementById('diceY'), 6];
 let diceG = [document.getElementById('diceG'), 6];
+
 //Player
 
 class Player {
     playerOnStart = false;
     playerNr = 0;
+
     constructor(name, piecesClass, playerNr) {
         this.pieces = Array.from(document.getElementsByClassName(piecesClass)).map((piece, i) => {
             return [window.getComputedStyle(piece).getPropertyValue('grid-area'), false, `${name}${i + 1}`, false];
@@ -16,6 +18,7 @@ class Player {
         this.playerNr = playerNr;
     }
 }
+
 let playerBlue = new Player("B", 'playerB', 0);
 let playerRed = new Player("R", 'playerR', 1);
 let playerYellow = new Player("Y", 'playerY', 2);
@@ -64,14 +67,8 @@ function gameTitleInConsole() {
         "| '_ \\| | | |     / _ \\ | |/ _ \\ \\/ / _` | '_ \\ / _` |/ _ \\ '__|  \n" +
         "| |_) | |_| |_   / ___ \\| |  __/>  < (_| | | | | (_| |  __/ |     \n" +
         "|_.__/ \\__, (_) /_/   \\_\\_|\\___/_/\\_\\__,_|_| |_|\\__,_|\\___|_|     \n" +
-        "       |___/                                                              \n" +
-        "                                                  _\n" +
-        " ____             _     _                        | |\n" +
-        "| __ )  __ _  ___| |__ (_)_ __   __ _  ___ _ __  | |\n" +
-        "|  _ \\ / _` |/ __| '_ \\| | '_ \\ / _` |/ _ \\ '__| |_|\n" +
-        "| |_) | (_| | (__| | | | | | | | (_| |  __/ |     _\n" +
-        "|____/ \\__,_|\\___|_| |_|_|_| |_|\\__, |\\___|_|    (_)\n" +
-        "                                |___/           \n";
+        "       |___/                                                              \n"
     console.info(banner);
 }
+
 gameTitleInConsole();

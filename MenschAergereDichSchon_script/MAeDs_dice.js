@@ -13,9 +13,10 @@ function RollDice(color, dice, player) {
         }, diceThrowTime);
     }
 }
+
 // Movable
 function turn(color, dice, player) {
-    if (dice[1] === 6 && !player.playerOnStart){
+    if (dice[1] === 6 && !player.playerOnStart) {
         for (let i = 1; i <= 4; i++) {
             if (!player.pieces[i - 1][3]) {
                 document.getElementById('P' + player.name + '_' + i).classList.add('movable');
@@ -24,13 +25,11 @@ function turn(color, dice, player) {
         game_info_display_move();
         document.getElementById('dice' + player.name).classList.remove('throwable');
         counterDice = 0;
-    }
-    else{
-        if (counterDice < 2 && !anyPieceOutside(player) && !anyPieceHome(player)){
-            dice[0].setAttribute("onclick", "RollDice('"+color+"', dice"+color+", player"+what_player_EN(player)+")");
+    } else {
+        if (counterDice < 2 && !anyPieceOutside(player) && !anyPieceHome(player)) {
+            dice[0].setAttribute("onclick", "RollDice('" + color + "', dice" + color + ", player" + what_player_EN(player) + ")");
             counterDice++;
-        }
-        else {
+        } else {
             counterDice = 0;
             let ct = 0;
             for (let i = 1; i <= 4; i++) {
@@ -38,16 +37,16 @@ function turn(color, dice, player) {
                     document.getElementById('P' + player.name + '_' + i).classList.add('movable');
                     moveShadowPlayer(player, i, dice);
                 }//if in house look if movable
-                else if (player.pieces[i - 1][3]){
-                    let piecePosition = window.getComputedStyle(document.getElementsByClassName('player'+player.name)[i-1]).getPropertyValue('grid-area');
+                else if (player.pieces[i - 1][3]) {
+                    let piecePosition = window.getComputedStyle(document.getElementsByClassName('player' + player.name)[i - 1]).getPropertyValue('grid-area');
                     piecePosition = Number(piecePosition.substring(1));
                     if ((Number(piecePosition) + dice[1]) <= 8) {
                         document.getElementById('P' + player.name + '_' + i).classList.add('movable');
                         moveShadowPlayer(player, i, dice);
+                    } else {
+                        ct++;
                     }
-                    else{ct++;}
-                }
-                else ct++;
+                } else ct++;
             }
             if (ct === 4) {
                 nextDice(player, dice);
@@ -55,7 +54,7 @@ function turn(color, dice, player) {
             document.getElementById('dice' + player.name).classList.remove('throwable');
         }
     }
-    if (dice[1] === 6){
+    if (dice[1] === 6) {
         for (let i = 1; i <= 4; i++) {
             if (player.pieces[i - 1][1]) {
                 moveShadowPlayer(player, i, dice);
@@ -63,19 +62,19 @@ function turn(color, dice, player) {
         }
     }
 }
+
 // Mark next Dice
 function nextDice(player, dice) {
     counterDice = 0;
-    switch (player.name){
-        case "B":{
+    switch (player.name) {
+        case "B": {
             dice[0].setAttribute("onclick", "RollDice('B', diceB, playerBlue)");
             if (anzOfAllPlayers >= 3) {
                 playerInfo.innerHTML = "Rot";
                 playerInfo.style.color = "var(--MAeDs_red)";
                 game_info_display_nextPlayer(playerRed);
                 document.getElementById('diceR').classList.add('throwable');
-            }
-            else {
+            } else {
                 playerInfo.innerHTML = "Gelb";
                 playerInfo.style.color = "var(--MAeDs_yellow)";
                 game_info_display_nextPlayer(playerYellow);
@@ -83,7 +82,7 @@ function nextDice(player, dice) {
             }
             break;
         }
-        case "R":{
+        case "R": {
             dice[0].setAttribute("onclick", "RollDice('R', diceR, playerRed)");
             playerInfo.innerHTML = "Gelb";
             playerInfo.style.color = "var(--MAeDs_yellow)";
@@ -91,15 +90,14 @@ function nextDice(player, dice) {
             document.getElementById('diceY').classList.add('throwable');
             break;
         }
-        case "Y":{
+        case "Y": {
             dice[0].setAttribute("onclick", "RollDice('Y', diceY, playerYellow)");
             if (anzOfAllPlayers === 4) {
                 playerInfo.innerHTML = "Grün";
                 playerInfo.style.color = "var(--MAeDs_green)";
                 game_info_display_nextPlayer(playerGreen);
                 document.getElementById('diceG').classList.add('throwable');
-            }
-            else{
+            } else {
                 playerInfo.innerHTML = "Blau";
                 playerInfo.style.color = "var(--MAeDs_blue)";
                 game_info_display_nextPlayer(playerBlue);
@@ -107,7 +105,7 @@ function nextDice(player, dice) {
             }
             break;
         }
-        case "G":{
+        case "G": {
             dice[0].setAttribute("onclick", "RollDice('G', diceG, playerGreen)");
             playerInfo.innerHTML = "Blau";
             playerInfo.style.color = "var(--MAeDs_blue)";
@@ -116,16 +114,23 @@ function nextDice(player, dice) {
             break;
         }
     }
-    if (anzOfAllPlayers === 3){
-        if (player.name === 'Y'){playersTurn = 0;}
-        else{playersTurn++;}
-    }
-    else if (anzOfAllPlayers === 2){
-        if (player.name === "Y"){playersTurn = 0;}
-        else{playersTurn++;}
-    }
-    else {
-        if (player.name === "G"){playersTurn = 0;}
-        else{playersTurn++;}
+    if (anzOfAllPlayers === 3) {
+        if (player.name === 'Y') {
+            playersTurn = 0;
+        } else {
+            playersTurn++;
+        }
+    } else if (anzOfAllPlayers === 2) {
+        if (player.name === "Y") {
+            playersTurn = 0;
+        } else {
+            playersTurn++;
+        }
+    } else {
+        if (player.name === "G") {
+            playersTurn = 0;
+        } else {
+            playersTurn++;
+        }
     }
 }
